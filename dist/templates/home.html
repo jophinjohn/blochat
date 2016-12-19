@@ -5,16 +5,18 @@
         <div class="col-md-4 chat-room-names">
             <div ng-controller="ModuleCtrl as module">
                 <script type="text/ng-template" id="myModalContent.html">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="modal-title">Room Creation Modal</h3>
-                    </div>
-                    <div class="modal-body" id="modal-body">
-                        <input type="text" ng-model="home.chatName" placeholder="Enter new room name">
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" type="button" ng-click="module.addRoom(home.chatName)">Presto!</button>
-                        <button class="btn btn-warning" type="button" ng-click="module.close()">Cancel</button>
-                    </div>
+                    <form>
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="modal-title">Room Creation Modal</h3>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+                            <input type="text" ng-model="home.chatName" placeholder="Enter new room name">
+                        </div>
+                        <div class="modal-footer">
+                            <input class="btn btn-primary" type="submit" ng-click="module.addRoom(home.chatName)" value="Presto!" />
+                            <button class="btn btn-warning" type="button" ng-click="module.close()">Cancel</button>
+                        </div>
+                    </form>
                 </script>
             <button class="btn btn-primary" type="button" ng-click="module.open()">Create New Room</button>
             </div>
