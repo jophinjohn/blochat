@@ -36,6 +36,13 @@
 
 <div class="col-md-9 chatroom">
     <h3>{{ home.selectedRoom.name }}</h3>
+    {{ home.currentUser }}
+     <form ng-if="!home.currentUser">
+    <div class="form-group" >
+      <input type="text" placeholder="Enter a username..." class="form-control" ng-model="newUserName">
+    </div>
+    <button class="btn btn-primary" type="button" ng-click="home.saveUserName(newUserName)">Create</button>
+  </form>
     <p ng-repeat="message in home.messages">
        <strong>{{ message.username }}:</strong> {{ message.body }}
         <br />
@@ -43,3 +50,15 @@
     </p>
 </div>
             
+<div class="modal-header">
+  <h3 class="modal-title" id="modal-title">Set a Username!</h3>
+</div>
+<div class="modal-body" id="modal-body">
+  <div class="form-group" >
+		<input type="text" placeholder="Enter a username..." class="form-control" ng-model="newUsername">
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="create()">Create</button>
+</div>
+
