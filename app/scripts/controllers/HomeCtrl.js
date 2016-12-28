@@ -23,6 +23,8 @@
       BlocChatCookies.saveUserName(userName); 
       this.currentUser = BlocChatCookies.getCurrentUser();
     }
+    
+    this.sendMessages = Message.send; 
   }
     angular
         .module('blocChat')

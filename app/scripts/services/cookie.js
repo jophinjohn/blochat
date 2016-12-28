@@ -1,13 +1,7 @@
 (function() {
   function BlocChatCookies($cookies) {
     
-//    
-//    if (!currentUser || currentUser === '') {
-//      $uibModal.open({
-//        // Modal configuration object properties
-//      })
-//    }
-    
+ 
     var saveUserName = function(userName) {
       console.log(userName);
       console.log("test");
@@ -16,6 +10,7 @@
     
     var getCurrentUser = function() {
       return $cookies.get('blocChatCurrentUser');
+      bloChatCurrentUser = null;
     }
     
     return {
