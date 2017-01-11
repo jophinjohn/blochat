@@ -5,6 +5,13 @@
             enabled: true,
             requireBase: false
         });
+        
+        $stateProvider
+            .state('welcomePage', {
+                    url: '/',
+            templateUrl: '/templates/welcome.html',
+       controller: "WelcomeCtrl as welcome"
+        });
 
         $stateProvider
             .state('home', {

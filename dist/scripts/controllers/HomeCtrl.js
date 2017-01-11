@@ -1,5 +1,6 @@
 (function() {
-    function HomeCtrl(BlocChatCookies,Room, Message) {
+    function HomeCtrl(BlocChatCookies,Authorization,Room, Message) {
+        this.auth = Authorization;
         this.roomData = Room;
         this.addRoom = function(chatRoomName) {
             this.roomData.add(chatRoomName)
@@ -17,7 +18,7 @@
     
     
     //To get Current User
-    this.currentUser ;
+    this.currentUser = Authorization.getCurrentUser(); 
     
     //Save Username
     this.saveUserName = function(userName) {
@@ -32,5 +33,5 @@
   }
     angular
         .module('blocChat')
-        .controller("HomeCtrl", [ 'BlocChatCookies','Room', 'Message', HomeCtrl])
+        .controller("HomeCtrl", [ 'BlocChatCookies','Room',"Authorization", 'Message', HomeCtrl])
 })();

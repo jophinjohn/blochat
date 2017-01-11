@@ -5,6 +5,12 @@
     <title>Bloc Chat Angular</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+    <link rel="stylesheet" href="/styles/welcome.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    
 </head>
 <body  ng-controller="HomeCtrl">
     <ui-view></ui-view>
@@ -32,6 +38,8 @@
   firebase.initializeApp(config);
 </script>
     <!-- AngularFire -->
+   <script src="/scripts/controllers/WelcomeCtrl.js"></script>
+    <script src="/scripts/services/auth.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
     
     <!--Apps, controllers and services-->

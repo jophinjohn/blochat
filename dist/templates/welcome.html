@@ -1,0 +1,92 @@
+<div class="body"> 
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="http://github.com/jophinjohn">Created by Jophin John</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        
+        <form ng-if="!currentUser" class="navbar-form navbar-right" ng-submit="welcome.userSignIn(email, password)">
+          <div class="form-group">
+            <input type="email" placeholder="email" name="Email" ng-model="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="password" name="Password" ng-model="password" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </form>
+        
+        <!-- show a log out button if the user exists -->
+        <button ng-if="currentUser" type="submit" class="btn btn-success" ng-click="welcome.auth.signOut()">Log Out</button>
+
+        
+      </div> <!--/.navbar-collapse -->
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to ChatComm</h1>
+      <p>Click Sign Up to start connecting!</p>
+      <p>{{ currentUser }}</p>
+      <p><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#signUpModal">Sign Up! &raquo;</a></p>
+
+<!--      User Sign Up Modal-->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Sign Up Below!</h4>
+            </div>
+
+      <!--  In our modal body is where we add our form-->
+            <div class="modal-body">
+
+              <form ng-submit="welcome.userSignUp(usersEmail, usersPassword)" class="MessageForm">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="email" ng-model="usersEmail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password" ng-model="usersPassword" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default" >Submit</button>
+              </form>
+
+            </div>
+            
+            <div class="modal-footer">
+              <h4 class="modal-title" id="myModalLabel">** Your Email will be your username that will be used in the chat! **</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <section class="selling-points"> <!-- selling points -->
+    <div class="point">
+      <span class="ion-chatbox-working"></span>
+      <h5 class="point-title">Communicate</h5>
+      <p class="point-description">Connect with people all around the world!</p>
+    </div>
+    <div class="point">
+      <span class="ion-ios-infinite"></span>
+      <h5 class="point-title">Unlimited, No Limits, Free</h5>
+      <p class="point-description">No arbitrary limits!</p>
+    </div>
+    <div class="point">
+      <span class="ion-paper-airplane"></span>
+      <h5 class="point-title">Fast</h5>
+      <p class="point-description">Messages are sent in real time!</p>
+    </div>
+  </section>
+</div>

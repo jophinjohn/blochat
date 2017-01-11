@@ -9,6 +9,9 @@
             <div ng-controller="ModuleCtrl as module">
                  <p class="title"><strong>Chat Rooms</strong></p>
                  <button class="btn btn-primary new-chat-button" type="button" ng-click="module.open()"><strong>+ </strong>New Chat Room</button>
+                <div class="sign-out">
+                    <p ng-if="home.auth.getCurrentUser()" class="title">Hello {{ home.auth.getCurrentUser().displayName }}! <button ng-if="home.auth.getCurrentUser()" ng-click="home.auth.signOut()" class="btn btn-primary">Sign Out</button></p>
+                </div>
                  
                 <div class="rooms-list">
                     <div ng-repeat="room in home.roomData.all" class="chatrooms">

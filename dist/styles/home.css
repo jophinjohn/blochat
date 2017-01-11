@@ -1,0 +1,50 @@
+.sidebar {
+	clear: both;
+  background-image: url(../assets/images/mochaGrunge_@2X.png);
+	height: 1000px;
+}
+
+.sidebar .header {
+	margin: auto;
+	padding-top: 5px;
+}
+
+.sidebar .header .title {
+	text-align: center;
+	font-size: 30px;
+}
+
+.sidebar .header .new-username {
+  text-align: center;
+}
+
+.sidebar .header .new-chat-room {
+	text-align: center;
+  padding-top: 15px
+}
+
+.sidebar .header .sign-out {
+  text-align: center;
+  font-size: 30px;
+}
+
+.sidebar .rooms-list {
+	margin: auto;
+	padding-top: 15px;
+}
+
+.sidebar .rooms-list .chatrooms {
+	text-align: center;
+  font-size: 20px;
+  color: rgb(0,0,0);
+}
+
+.chatroom {
+  background-image: url(../assets/images/weather.png);
+	height: 1000px;
+	float: right;
+}
+
+.chatroom .message-input {
+	float: left;
+}
