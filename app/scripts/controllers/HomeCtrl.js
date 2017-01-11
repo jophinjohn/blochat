@@ -5,6 +5,7 @@
             this.roomData.add(chatRoomName)
         }
     
+    this.selectedRoom=null;
         
     this.selectRoom = function(room) {
             this.selectedRoom = room;
@@ -16,7 +17,7 @@
     
     
     //To get Current User
-    this.currentUser = BlocChatCookies.getCurrentUser();
+    this.currentUser ;
     
     //Save Username
     this.saveUserName = function(userName) {
@@ -24,7 +25,10 @@
       this.currentUser = BlocChatCookies.getCurrentUser();
     }
     
-    this.sendMessages = Message.send; 
+    this.sendMessages = function(message, room) {
+        Message.send(message, room);
+        this.newMessage = '';
+    }
   }
     angular
         .module('blocChat')

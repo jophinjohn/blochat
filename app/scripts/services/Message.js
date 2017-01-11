@@ -14,15 +14,33 @@
             username: $cookies.get('blocChatCurrentUser'),
             body: newMessage,
             roomId: roomId,
-            sentAt: firebase.database.ServerValue.TIMESTAMP
-         }
+            sentAt: timeFormat()
+         };
          
          //Update the messages array with our new message object
          messages.$add(message);   
         
     }
   };
-    
+    function timeFormat() {
+		var date = new Date();
+ 			var h = date.getHours();
+ 			var m = date.getMinutes();
+ 			var s = date.getSeconds();
+ 			var dayNight = "AM";
+ 
+ 			if (h > 12) {
+ 				h -= 12;
+ 				dayNight = "PM";
+ 			}
+ 			if (m < 10) {
+ 				m = "0" + m;
+ 			}
+ 			if (s < 10) {
+ 				s = "0" + s;
+ 			}
+ 			return h + ":" + m + " " + dayNight;
+ 		}
   }
   angular
     .module('blocChat')

@@ -10,8 +10,8 @@
     
     var getCurrentUser = function() {
       return $cookies.get('blocChatCurrentUser');
-      bloChatCurrentUser = null;
-    }
+    
+    };
     
     return {
       saveUserName: saveUserName,
